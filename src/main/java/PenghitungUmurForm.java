@@ -47,6 +47,12 @@ public class PenghitungUmurForm extends javax.swing.JFrame {
 
         jLabel2.setText("Hasil Umur");
 
+        jDateChooser1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jDateChooser1PropertyChange(evt);
+            }
+        });
+
         btnHitung.setText("Hitung");
         btnHitung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,6 +152,10 @@ public class PenghitungUmurForm extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Pilih tanggal lahir terlebih dahulu!", "Error", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_btnHitungActionPerformed
+
+    private void jDateChooser1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser1PropertyChange
+       txtUmur.setText("");  // Kosongkan hasil jika tanggal diubah
+    }//GEN-LAST:event_jDateChooser1PropertyChange
 
     /**
      * @param args the command line arguments
